@@ -48,13 +48,13 @@ function saludo(idioma) {
    // Si "idioma" es "ingles", devuelve "Hello!".
    // Si "idioma" no es ninguno de los anteriores o es `undefined` devuelve "Hola!".
    // Tu código:
-   if (idioma == "aleman"){
+   if (idioma === "aleman"){
       return "Guten Tag!";
    }
-   else if (idioma == "mandarin"){
+   else if (idioma === "mandarin"){
       return "Ni Hao!";
    }
-   else if (idioma == "ingles"){
+   else if (idioma === "ingles"){
       return "Hello!";
    }
    else {
@@ -182,23 +182,42 @@ function esPrimo(num) {
    // [Pista 2]: puedes resolverlo utilizando un `bucle for`.
    // [Nota]: los números negativos, 0 y 1 NO son números primos.
    // Tu código:
-   for ( num= 0; num/num && num/1; true){
-      num/num && num/1
-      return true
+   /*if (num > 1){
+      for(var i = 2; i < num ; i++){
+         if (num % i === 0 )
+         return false;
+      }
+      return true;
    }
+   return false;
+}*/
+if (num<=1){
+   return false;
+} else{
+   for (let i = 2 ; i < num; i++){
+      if (num % i === 0){
+         return false;
+      }
+   }
+}return true;
 }
 
 function esVerdadero(valor) {
    // Si "valor" es verdadero retornar "Soy verdadero".
    // Caso contrario, retornar "Soy falso".
    // Tu código:
-   Boolean(valor);
+if (valor === true){return "Soy verdadero";}
+return "Soy falso";
 }
 
 function tieneTresDigitos(num) {
    // Si el número recibido tiene tres dígitos retornar true.
    // Caso contrario, retornar false.
    // Tu código:
+   if (num.toString().length === 3){
+      return true;
+   }
+   else{ return false;}
 }
 
 function doWhile(num) {
@@ -206,6 +225,15 @@ function doWhile(num) {
    // Retornar el valor final.
    // Utilizar el bucle Do-While.
    // Tu código:
+   let iterador = 8;
+
+   let suma = num;
+   
+   do{
+      suma+=5
+      iterador--;
+   } while(iterador > 0)
+   return suma;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
